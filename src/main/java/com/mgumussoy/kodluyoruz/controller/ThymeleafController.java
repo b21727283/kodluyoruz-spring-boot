@@ -26,4 +26,11 @@ public class ThymeleafController {
         model.addAttribute("key_model1", "Ben modelden geldim-1");
         return "thymeleaf_file/thymeleaf3";
     }
+
+    @GetMapping("/thymeleaf4")
+    public String getThymeleaf4Model(Model model) {
+        model.addAttribute("key_model1", "Ben modelden geldim-1");
+        model.addAttribute("key_model2", "Ben modelden geldim-2");
+        return "thymeleaf4";
+    }
 }
