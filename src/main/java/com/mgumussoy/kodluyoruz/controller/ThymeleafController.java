@@ -4,6 +4,7 @@ import com.mgumussoy.kodluyoruz.dto.ProductDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,6 +13,11 @@ import java.util.List;
 // thymeleaf -> kekik yaprağı
 @Controller
 public class ThymeleafController {
+
+    @GetMapping({"/", "index"})
+    public String index() {
+        return "index";
+    }
 
     @GetMapping("/thymeleaf")
     //@ResponseBody
@@ -82,6 +88,16 @@ public class ThymeleafController {
 
         model.addAttribute("product_list", productDtoList);
         return "thymeleaf6";
+    }
+
+    @GetMapping({"/thymeleaf7", "/thymeleaf7/{id}"})
+    public String getThymeleaf7ModelObject(Model model, @PathVariable(name = "id", required = false) Long id) {
+        if (id != null) {
+            model.addAttribute("key_model1", id);
+        } else {
+            model.addAttribute("key_model1", "id bulunamadı");
+        }
+        return "thymeleaf7";
     }
 
 
