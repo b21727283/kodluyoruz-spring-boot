@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 // thymeleaf -> kekik yaprağı
 @Controller
@@ -92,11 +93,7 @@ public class ThymeleafController {
 
     @GetMapping({"/thymeleaf7", "/thymeleaf7/{id}"})
     public String getThymeleaf7ModelObject(Model model, @PathVariable(name = "id", required = false) Long id) {
-        if (id != null) {
-            model.addAttribute("key_model1", id);
-        } else {
-            model.addAttribute("key_model1", "id bulunamadı");
-        }
+        model.addAttribute("key_model1", Objects.requireNonNullElse(id, "id bulunamadı"));
         return "thymeleaf7";
     }
 
