@@ -1,6 +1,6 @@
-package com.mgumussoy.kodluyoruz.controller;
+package com.mgumussoy.kodluyoruz.tutorials.controller;
 
-import com.mgumussoy.kodluyoruz.dto.ProductDto;
+import com.mgumussoy.kodluyoruz.tutorials.dto.ProductDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

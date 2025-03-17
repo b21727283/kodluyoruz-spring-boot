@@ -1,6 +1,6 @@
-package com.mgumussoy.kodluyoruz.bean;
+package com.mgumussoy.kodluyoruz.tutorials.bean;
 
-import com.mgumussoy.kodluyoruz.dto.BeanDto;
+import com.mgumussoy.kodluyoruz.tutorials.dto.BeanDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;

@@ -1,6 +1,8 @@
-package com.mgumussoy.kodluyoruz.dto;
+package com.mgumussoy.kodluyoruz.tutorials.dto;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

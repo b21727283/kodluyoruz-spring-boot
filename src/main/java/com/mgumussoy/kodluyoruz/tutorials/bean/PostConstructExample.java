@@ -1,4 +1,4 @@
-package com.mgumussoy.kodluyoruz.bean;
+package com.mgumussoy.kodluyoruz.tutorials.bean;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.mgumussoy.kodluyoruz.dto;
+package com.mgumussoy.kodluyoruz.tutorials.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
-package com.mgumussoy.kodluyoruz.controller;
+package com.mgumussoy.kodluyoruz.tutorials.controller;
 
-import com.mgumussoy.kodluyoruz.dto.TeacherDto;
+import com.mgumussoy.kodluyoruz.tutorials.dto.TeacherDto;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;

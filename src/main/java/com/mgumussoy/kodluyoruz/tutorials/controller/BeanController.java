@@ -1,7 +1,7 @@
-package com.mgumussoy.kodluyoruz.controller;
+package com.mgumussoy.kodluyoruz.tutorials.controller;
 
-import com.mgumussoy.kodluyoruz.bean.BeanConfig;
-import com.mgumussoy.kodluyoruz.bean.PostConstructExample;
+import com.mgumussoy.kodluyoruz.tutorials.bean.BeanConfig;
+import com.mgumussoy.kodluyoruz.tutorials.bean.PostConstructExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
