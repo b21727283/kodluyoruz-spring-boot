@@ -26,9 +26,6 @@ public class EmployeeServiceImpl implements EmployeeServices {
     private ModelMapper modelMapper;
 
 
-    //LIST
-    // http://localhost:8080/api/v1/employees
-    @GetMapping("/employees")
     @Override
     public List<EmployeeDto> getAllEmployees() {
         List<EmployeeDto> listDto = new ArrayList<>();
@@ -40,9 +37,6 @@ public class EmployeeServiceImpl implements EmployeeServices {
         return listDto;
     }
 
-    //FIND
-    // http://localhost:8080/api/v1/employees/1
-    @GetMapping("/employees/{id}")
     @Override
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable(name = "id") Long id) {
 
@@ -57,17 +51,11 @@ public class EmployeeServiceImpl implements EmployeeServices {
         return ResponseEntity.ok(employeeDto);
     }
 
-    //SAVE
-    // http://localhost:8080/api/v1/employees
-    @PostMapping("/employees")
     public void createEmployee(@RequestBody EmployeeDto employeeDto) { //@RequestBody
         EmployeeEntity employeeEntity = DtoToEntity(employeeDto);//ModelMapper
         employeeRepository.save(employeeEntity);
     }
 
-    //DELETE
-    // http://localhost:8080/api/v1/employees
-    @DeleteMapping("/employees/{id}")
     @Override
     public void deleteEmployee(@PathVariable(name = "id") Long id) {
         EmployeeEntity employee = employeeRepository.findById(id)
@@ -79,9 +67,6 @@ public class EmployeeServiceImpl implements EmployeeServices {
         ResponseEntity.ok(response);
     }
 
-    //UPDATE
-    // http://localhost:8080/api/v1/employees
-    @PutMapping("/employees/{id}")
     @Override
     public void updateEmployee(@PathVariable(name = "id") Long id, @RequestBody EmployeeDto employeeDetails) {
         EmployeeEntity employeeEntity = DtoToEntity(employeeDetails);//ModelMapper
@@ -98,15 +83,11 @@ public class EmployeeServiceImpl implements EmployeeServices {
         ResponseEntity.ok(employeeDto);
     }
 
-
-    /// /////////////////////////////////
-    //Model Mapper Entity ==> Dto
     @Override
     public EmployeeDto EntityToDto(EmployeeEntity employeeEntity) {
         return modelMapper.map(employeeEntity, EmployeeDto.class);
     }
 
-    //Model Mapper Dto  ==> Entity
     @Override
     public EmployeeEntity DtoToEntity(EmployeeDto employeeDto) {
         return modelMapper.map(employeeDto, EmployeeEntity.class);
