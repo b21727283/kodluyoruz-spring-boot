@@ -5,6 +5,7 @@ import com.mgumussoy.kodluyoruz.data.entity.EmployeeEntity;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeServices {
 
@@ -14,9 +15,9 @@ public interface EmployeeServices {
 
     ResponseEntity<EmployeeDto> getEmployeeById(Long id);
 
-    void updateEmployee(Long id, EmployeeDto employeeDto);
+    ResponseEntity<EmployeeDto> updateEmployee(Long id, EmployeeDto employeeDto);
 
-    void deleteEmployee(Long id);
+    ResponseEntity<Map<String, Boolean>> deleteEmployee(Long id);
 
 
     EmployeeDto EntityToDto(EmployeeEntity employeeEntity);

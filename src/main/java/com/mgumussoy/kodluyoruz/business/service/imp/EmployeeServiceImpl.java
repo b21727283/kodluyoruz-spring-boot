@@ -57,18 +57,18 @@ public class EmployeeServiceImpl implements EmployeeServices {
     }
 
     @Override
-    public void deleteEmployee(@PathVariable(name = "id") Long id) {
+    public ResponseEntity<Map<String, Boolean>> deleteEmployee(@PathVariable(name = "id") Long id) {
         EmployeeEntity employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
 
         employeeRepository.delete(employee);
         Map<String, Boolean> response = new HashMap<>();
         response.put("deleted", Boolean.TRUE);
-        ResponseEntity.ok(response);
+        return ResponseEntity.ok(response);
     }
 
     @Override
-    public void updateEmployee(@PathVariable(name = "id") Long id, @RequestBody EmployeeDto employeeDetails) {
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(name = "id") Long id, @RequestBody EmployeeDto employeeDetails) {
         EmployeeEntity employeeEntity = DtoToEntity(employeeDetails);//ModelMapper
 
         EmployeeEntity employee = employeeRepository.findById(id)
@@ -80,7 +80,7 @@ public class EmployeeServiceImpl implements EmployeeServices {
 
         EmployeeEntity updatedEmployee = employeeRepository.save(employee);
         EmployeeDto employeeDto = EntityToDto(updatedEmployee);//model
-        ResponseEntity.ok(employeeDto);
+        return ResponseEntity.ok(employeeDto);
     }
 
     @Override
