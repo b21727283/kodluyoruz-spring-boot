@@ -34,11 +34,11 @@ public class BaseEntity {
     @CreationTimestamp
     private Date createdDate;
 
-    @Column(name = "update_by",nullable = false)
+    @Column(name = "update_by")
     @LastModifiedBy
     private String updateBy;
 
-    @Column(name = "update_date",nullable = false)
+    @Column(name = "update_date")
     @LastModifiedDate
     private Date updateDate;
 
